@@ -48,9 +48,10 @@ class PostDetail extends Component {
       this.props.getPostbyID(id);
       this.props.getComments(id);
     }
-  if (nextProps.posts.deleted == true){
+  if (Object.keys(nextProps.posts).length === 0 && nextProps.posts.constructor === Object){
       this.handleDeletion();
     }
+
   }
 
   handleDeletion(){
